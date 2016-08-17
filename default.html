@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="frames/angular-1.4.1/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="controller1">
+        <input type="text" ng-model="name">
+        <p>{{name}}</p>
+        <p>{{age}}</p>
+
+        <div ng-controller="controller2">
+            <p>{{name}}</p>
+            <p>{{age}}}</p>
+        </div>
+    </div>
+
+    <script>
+        var ctrl=angular.module('myApp',[]);
+
+        ctrl.controller('controller1',['$scope',function($scope){
+            $scope.name='hello';
+        }]);
+
+        ctrl.controller('controller2',['$scope',function($scope){
+            $scope.age=30;
+        }]);
+
+    </script>
+</body>
+</html>

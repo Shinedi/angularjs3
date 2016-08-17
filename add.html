@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="frames/angular-1.4.1/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="addControler">
+        <button class="button" ng-click="add(1)">add</button>
+        <p>{{count}}</p>
+    </div>
+    <script>
+        var app=angular.module('myApp',[]);
+
+        app.controller('addControler',function($scope){
+            $scope.count=0;
+            $scope.add=function(i){
+                $scope.count+=i;
+            };
+        });
+    </script>
+</body>
+</html>
